@@ -21,7 +21,7 @@ get '/schedule' do
   erb :schedule
 end
 
-get '/attendees' do
+get '/rsvps' do
   @rsvps = CSV.read('rsvps.csv')
 
   @acceptances = []
