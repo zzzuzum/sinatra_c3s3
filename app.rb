@@ -6,7 +6,7 @@ get '/' do
 end
 
 get '/todo' do
-  @todo = ['Order canapes', 'Confirm event details with attendees', 'Book band']
+  @todos = ['Order canapes', 'Confirm event details with attendees', 'Book band']
 
   erb :todo
 end
@@ -23,6 +23,14 @@ end
 
 get '/attendees' do
   @rsvps = CSV.read('rsvps.csv')
+
+  @acceptances = []
+  @rejections  = []
+  @acceptance_count = 0
+  @rejection_count  = 0
+
+  # TODO categorise rsvps into acceptances/rejections and count them
+
 
   erb :rsvps
 end
