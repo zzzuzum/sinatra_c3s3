@@ -8,6 +8,12 @@
 
   <table>
     <tr>
+    	 <% @schedule.each do |item| %>
+    	 <% item.each do |num| %>
+    	 	<td> <%= num %> </td>
+    	 	<% end %></tr>
+    	 
+    	 <% end %>
       <td>8pm</td>
       <td>Doors open</td>
     </tr>
